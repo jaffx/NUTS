@@ -5,6 +5,14 @@
 
 #include "nuts_datagram.h"
 
+uint16_t nuts_datagram::generate_nuts_id() {
+    static uint16_t NUTS_ID = 0;
+    if (NUTS_ID == 0xffff)
+        NUTS_ID = 0;
+    NUTS_ID++;
+    return NUTS_ID;
+}
+
 nuts_datagram::nuts_datagram() {
     this->id = 0;
     this->unset = 0;
@@ -93,16 +101,255 @@ int nuts_datagram::to_buffer(char *buffer, size_t buf_size) {
 void nuts_datagram::show_info() const noexcept {
 
     int width[2] = {10, 10};
+    cout << std::setiosflags(std::ios::left);
     cout << "-------------------------------------------" << endl;
     cout << setw(width[0]) << "FLAG" << std::setw(width[1]) << std::hex << flags << std::dec << endl;
     cout << setw(width[0]) << "ID" << std::setw(width[1]) << id << endl;
-    cout << setw(width[0]) << "FUN_LEN" << std::setw(width[1]) << int(func_name_length) << endl;
-    cout << setw(width[0]) << "DATA_LEN" << std::setw(width[1]) << data_length << endl;
-    cout << setw(width[0]) << "ENV_NUMBER" << std::setw(width[1]) << env_number << endl;
-    cout << "--------FUNC_NAME-------" << endl;
+    cout << setw(width[0]) << "DATA1_LEN" << std::setw(width[1]) << int(func_name_length) << endl;
+    cout << setw(width[0]) << "DATA2_LEN" << std::setw(width[1]) << data_length << endl;
+    cout << setw(width[0]) << "ENV_NUMBER" << std::setw(width[1]) << env_number << endl << endl;
+    cout << setw(width[0]) << "TYPE" << std::setw(width[1]) << nuts_type_2_text(this->get_type()) << endl;
+    cout << setw(width[0]) << "FORMAT" << std::setw(width[1]) << nuts_format_2_text(this->get_format()) << endl;
+    cout << setw(width[0]) << "STATUS" << std::setw(width[1]) << nuts_status_code_2_text(this->get_status_code())
+         << endl;
+
+    cout << "--------DATA1-------" << endl;
     cout << func_name << endl;
-    cout << "--------DATA-------" << endl;
+    cout << "--------DATA2-------" << endl;
     cout << data << endl;
     cout << "-------------------------------------------" << endl << endl;
+
+}
+
+nuts_paramters nuts_datagram::get_parameters() {
+    Json::Reader r;
+    nuts_paramters params;
+    if (not r.parse(data, params))
+        return Json::nullValue;
+    return params;
+}
+
+nuts_returns nuts_datagram::get_returns() {
+    return get_parameters();
+}
+
+void nuts_datagram::set_func_name(std::string func_name) {
+    this->data1 = func_name;
+}
+
+string nuts_datagram::get_func_name() {
+    return this->func_name;
+}
+
+void nuts_datagram::set_return(nuts_returns &v) {
+    this->data = std::move(v.toStyledString());
+}
+
+void nuts_datagram::set_data1(nuts_json_data &v) {
+    this->func_name = std::move(v.toStyledString());
+}
+
+void nuts_datagram::set_data1(string v) {
+    this->data1 = std::move(v);
+}
+
+string nuts_datagram::get_data1() {
+    return this->data1;
+}
+
+void nuts_datagram::set_data2(nuts_json_data &v) {
+    this->data = std::move(v.toStyledString());
+}
+
+void nuts_datagram::set_data2(string v) {
+    this->data2 = std::move(v);
+}
+
+string nuts_datagram::get_data2() {
+    return this->data2;
+}
+
+void nuts_datagram::set_parameters(nuts_paramters &v) {
+    set_return(v);
+}
+
+void nuts_datagram::initialize_request() noexcept {
+    this->set_type(NUTS_TYPE_REQUEST);
+    this->set_format(NUTS_FORMAT_JSON);
+    this->set_status_code(NUTS_STATUS_CODE_OK);
+    this->id = generate_nuts_id();
+}
+
+void nuts_datagram::initialize_response() noexcept {
+    this->set_type(NUTS_TYPE_RESPONSE);
+    this->set_format(NUTS_FORMAT_JSON);
+    this->set_status_code(NUTS_STATUS_CODE_OK);
+}
+
+void nuts_datagram::initialize_response(nuts_datagram &d) noexcept {
+    this->set_type(NUTS_TYPE_RESPONSE);
+    this->set_format(NUTS_FORMAT_JSON);
+    this->set_status_code(NUTS_STATUS_CODE_OK);
+    this->set_urge(d.get_urge());
+    this->set_resend(d.get_resend());
+    this->id = d.id;
+}
+
+void nuts_datagram::set_type(uint16_t type) noexcept {
+    if (type > 0x000f)
+        return;
+    type <<= 12;
+    this->flags &= 0x0fff;
+    this->flags |= type;
+}
+
+uint16_t nuts_datagram::get_type() const noexcept {
+    return (this->flags & 0xf000)>> 12;
+}
+
+void nuts_datagram::set_format(uint16_t f) noexcept {
+    if (f > 0x0003)
+        return;
+    f <<= 10;
+    this->flags &= 0xf3ff;
+    this->flags |= f;
+}
+
+uint16_t nuts_datagram::get_format() const noexcept {
+//    cout<<"flag!" << flags << endl;
+    return (this->flags & 0x0c00)>>10;
+}
+
+
+void nuts_datagram::set_urge(bool urge) {
+    if (urge) {
+        this->flags |= 0x0200;
+    } else {
+        this->flags &= 0xfcff;
+    }
+}
+
+bool nuts_datagram::get_urge() {
+    return this->flags & 0x0200;
+}
+
+void nuts_datagram::set_resend(bool resend) {
+    if (resend) {
+        this->flags |= 0x0100;
+    } else {
+        this->flags &= 0xfeff;
+    }
+}
+
+bool nuts_datagram::get_resend() {
+    return this->flags & 0x0100;
+}
+
+void nuts_datagram::set_status_code(uint16_t sc) {
+    if (sc > 0x000f) {
+        return;
+    }
+    this->flags &= 0xfff0;
+    this->flags |= sc;
+}
+
+uint16_t nuts_datagram::get_status_code() const {
+    return this->flags & 0x000f;
+}
+
+uint16_t nuts_datagram::get_id() const noexcept {
+    return this->id;
+}
+
+void nuts_datagram::set_id(uint16_t id) {
+    this->id = id;
+}
+
+void nuts_datagram::format_error() noexcept {
+    this->set_type(NUTS_TYPE_RESPONSE);
+    this->set_status_code(NUTS_STATUS_CODE_FORMAT_ERROR);
+    this->set_format(NUTS_FORMAT_TEXT);
+    this->set_data1("NUTS REQUEST FORMAT ERROR!");
+    this->set_data2("");
+}
+
+void nuts_datagram::refused() noexcept {
+    this->set_type(NUTS_TYPE_RESPONSE);
+    this->set_status_code(NUTS_STATUS_CODE_REFUSED);
+    this->set_format(NUTS_FORMAT_TEXT);
+    this->set_data1("Receiver refused!");
+    this->set_data2("");
+}
+
+void nuts_datagram::not_found() noexcept {
+    this->set_type(NUTS_TYPE_RESPONSE);
+    this->set_status_code(NUTS_STATUS_CODE_NOT_FOUND);
+    this->set_format(NUTS_FORMAT_TEXT);
+    this->set_data1("Remote process not found !");
+    this->set_data2("");
+}
+
+void nuts_datagram::error(std::string v) noexcept {
+    this->set_type(NUTS_TYPE_RESPONSE);
+    this->set_status_code(NUTS_STATUS_CODE_ERROR);
+    this->set_format(NUTS_FORMAT_TEXT);
+    if (v.size() == 0)
+        this->set_data1("Unknown error");
+    else
+        this->set_data1(std::move(v));
+    this->set_data2("");
+}
+
+string nuts_type_2_text(uint16_t type) {
+    string ret = "Unknown";
+    switch (type) {
+        case NUTS_TYPE_REQUEST:
+            ret = "Nuts Request";
+            break;
+        case NUTS_TYPE_RESPONSE:
+            ret = "Nuts Response";
+            break;
+        case NUTS_TYPE_LOG:
+            ret = "LOG";
+            break;
+    }
+    return ret;
+
+}
+
+string nuts_status_code_2_text(uint16_t code) {
+    string ret = "Unknown";
+    switch (code) {
+        case NUTS_STATUS_CODE_OK:
+            ret = "OK";
+            break;
+        case NUTS_STATUS_CODE_ERROR:
+            ret = "ERROR";
+            break;
+        case NUTS_STATUS_CODE_NOT_FOUND:
+            ret = "NOT FOUND";
+            break;
+        case NUTS_STATUS_CODE_FORMAT_ERROR:
+            ret = "FORMAT ERROR";
+            break;
+        case NUTS_STATUS_CODE_REFUSED:
+            ret = "REFUSED";
+            break;
+    }
+    return ret;
+
+}
+
+string nuts_format_2_text(uint16_t f) {
+    string ret = "Unknown";
+    switch (f) {
+        case NUTS_FORMAT_JSON:
+            ret = "JSON";
+            break;
+        case NUTS_FORMAT_TEXT:
+            ret = "TEXT";
+            break;
+    }
+    return ret;
 
 }

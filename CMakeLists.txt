@@ -11,7 +11,7 @@ set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR})
 include_directories(/usr/local/xyq)
 link_directories(/usr/local/xyq/jsoncpp/lib)
 
-include_directories(nuts/include)
+include_directories(nuts/src)
 link_directories(nuts/lib)
 
 

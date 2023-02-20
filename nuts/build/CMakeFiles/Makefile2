@@ -106,7 +106,7 @@ CMakeFiles/nuts_datagram.dir/clean:
 # Target rules for target CMakeFiles/nuts_server.dir
 
 # All Build rule for target.
-CMakeFiles/nuts_server.dir/all:
+CMakeFiles/nuts_server.dir/all: CMakeFiles/nuts_datagram.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts_server.dir/build.make CMakeFiles/nuts_server.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts_server.dir/build.make CMakeFiles/nuts_server.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/lyn/codes/Cpp/clion/NUTS/nuts/build/CMakeFiles --progress-num=3,4 "Built target nuts_server"
@@ -114,7 +114,7 @@ CMakeFiles/nuts_server.dir/all:
 
 # Build rule for subdir invocation for target.
 CMakeFiles/nuts_server.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lyn/codes/Cpp/clion/NUTS/nuts/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lyn/codes/Cpp/clion/NUTS/nuts/build/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/nuts_server.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lyn/codes/Cpp/clion/NUTS/nuts/build/CMakeFiles 0
 .PHONY : CMakeFiles/nuts_server.dir/rule
