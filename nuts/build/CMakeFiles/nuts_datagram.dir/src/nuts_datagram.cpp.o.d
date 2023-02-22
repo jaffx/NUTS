@@ -427,15 +427,12 @@ CMakeFiles/nuts_datagram.dir/src/nuts_datagram.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/sys/_types/_socklen_t.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/sys/_types/_iovec_t.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/netinet6/in6.h \
-  /Users/lyn/codes/Cpp/clion/NUTS/nuts/../libs/jsoncpp/include/json/json.h \
-  /Users/lyn/codes/Cpp/clion/NUTS/nuts/../libs/jsoncpp/include/json/config.h \
+  /usr/local/include/json/json.h /usr/local/include/json/config.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/sstream \
-  /Users/lyn/codes/Cpp/clion/NUTS/nuts/../libs/jsoncpp/include/json/allocator.h \
-  /Users/lyn/codes/Cpp/clion/NUTS/nuts/../libs/jsoncpp/include/json/version.h \
-  /Users/lyn/codes/Cpp/clion/NUTS/nuts/../libs/jsoncpp/include/json/json_features.h \
-  /Users/lyn/codes/Cpp/clion/NUTS/nuts/../libs/jsoncpp/include/json/forwards.h \
-  /Users/lyn/codes/Cpp/clion/NUTS/nuts/../libs/jsoncpp/include/json/reader.h \
-  /Users/lyn/codes/Cpp/clion/NUTS/nuts/../libs/jsoncpp/include/json/value.h \
+  /usr/local/include/json/allocator.h /usr/local/include/json/version.h \
+  /usr/local/include/json/json_features.h \
+  /usr/local/include/json/forwards.h /usr/local/include/json/reader.h \
+  /usr/local/include/json/value.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/array \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/map \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/__functional/is_transparent.h \
@@ -446,7 +443,7 @@ CMakeFiles/nuts_datagram.dir/src/nuts_datagram.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/__split_buffer \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/deque \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/stack \
-  /Users/lyn/codes/Cpp/clion/NUTS/nuts/../libs/jsoncpp/include/json/writer.h \
+  /usr/local/include/json/writer.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/unordered_map \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/__hash_table \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/cmath \

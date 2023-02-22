@@ -430,15 +430,15 @@ CMakeFiles/nuts_client.dir/src/nuts_client.cpp.o: /Users/lyn/codes/Cpp/clion/NUT
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/sys/_types/_socklen_t.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/sys/_types/_iovec_t.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/netinet6/in6.h \
-  /usr/local/xyq/jsoncpp/include/json/json.h \
-  /usr/local/xyq/jsoncpp/include/json/config.h \
+  /Users/lyn/codes/Cpp/clion/NUTS/libs/jsoncpp/include/json/json.h \
+  /Users/lyn/codes/Cpp/clion/NUTS/libs/jsoncpp/include/json/config.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/sstream \
-  /usr/local/xyq/jsoncpp/include/json/allocator.h \
-  /usr/local/xyq/jsoncpp/include/json/version.h \
-  /usr/local/xyq/jsoncpp/include/json/json_features.h \
-  /usr/local/xyq/jsoncpp/include/json/forwards.h \
-  /usr/local/xyq/jsoncpp/include/json/reader.h \
-  /usr/local/xyq/jsoncpp/include/json/value.h \
+  /Users/lyn/codes/Cpp/clion/NUTS/libs/jsoncpp/include/json/allocator.h \
+  /Users/lyn/codes/Cpp/clion/NUTS/libs/jsoncpp/include/json/version.h \
+  /Users/lyn/codes/Cpp/clion/NUTS/libs/jsoncpp/include/json/json_features.h \
+  /Users/lyn/codes/Cpp/clion/NUTS/libs/jsoncpp/include/json/forwards.h \
+  /Users/lyn/codes/Cpp/clion/NUTS/libs/jsoncpp/include/json/reader.h \
+  /Users/lyn/codes/Cpp/clion/NUTS/libs/jsoncpp/include/json/value.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/array \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/map \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/__functional/is_transparent.h \
@@ -449,7 +449,7 @@ CMakeFiles/nuts_client.dir/src/nuts_client.cpp.o: /Users/lyn/codes/Cpp/clion/NUT
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/__split_buffer \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/deque \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/stack \
-  /usr/local/xyq/jsoncpp/include/json/writer.h \
+  /Users/lyn/codes/Cpp/clion/NUTS/libs/jsoncpp/include/json/writer.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/unordered_map \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/__hash_table \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/cmath \
@@ -477,11 +477,15 @@ CMakeFiles/nuts_client.dir/src/nuts_client.cpp.o: /Users/lyn/codes/Cpp/clion/NUT
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/sys/_types/_posix_vdisable.h:
 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/unistd.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/cmath:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/__hash_table:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/unordered_map:
+
+/Users/lyn/codes/Cpp/clion/NUTS/libs/jsoncpp/include/json/writer.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/stack:
 
@@ -497,19 +501,17 @@ CMakeFiles/nuts_client.dir/src/nuts_client.cpp.o: /Users/lyn/codes/Cpp/clion/NUT
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/map:
 
-/usr/local/xyq/jsoncpp/include/json/value.h:
+/Users/lyn/codes/Cpp/clion/NUTS/libs/jsoncpp/include/json/value.h:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/unistd.h:
+/Users/lyn/codes/Cpp/clion/NUTS/libs/jsoncpp/include/json/json_features.h:
 
-/usr/local/xyq/jsoncpp/include/json/reader.h:
+/Users/lyn/codes/Cpp/clion/NUTS/libs/jsoncpp/include/json/version.h:
 
-/usr/local/xyq/jsoncpp/include/json/json_features.h:
+/Users/lyn/codes/Cpp/clion/NUTS/libs/jsoncpp/include/json/allocator.h:
 
-/usr/local/xyq/jsoncpp/include/json/version.h:
+/Users/lyn/codes/Cpp/clion/NUTS/libs/jsoncpp/include/json/config.h:
 
-/usr/local/xyq/jsoncpp/include/json/allocator.h:
-
-/usr/local/xyq/jsoncpp/include/json/config.h:
+/Users/lyn/codes/Cpp/clion/NUTS/libs/jsoncpp/include/json/json.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/sys/_types/_iovec_t.h:
 
@@ -632,8 +634,6 @@ CMakeFiles/nuts_client.dir/src/nuts_client.cpp.o: /Users/lyn/codes/Cpp/clion/NUT
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/__iterator/reverse_access.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/__algorithm/sample.h:
-
-/usr/local/xyq/jsoncpp/include/json/forwards.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/string.h:
 
@@ -805,6 +805,8 @@ CMakeFiles/nuts_client.dir/src/nuts_client.cpp.o: /Users/lyn/codes/Cpp/clion/NUT
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/__algorithm/replace_copy.h:
 
+/Users/lyn/codes/Cpp/clion/NUTS/libs/jsoncpp/include/json/reader.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/__iterator/istream_iterator.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/__algorithm/min.h:
@@ -879,8 +881,6 @@ CMakeFiles/nuts_client.dir/src/nuts_client.cpp.o: /Users/lyn/codes/Cpp/clion/NUT
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/pthread/qos.h:
 
-/usr/local/xyq/jsoncpp/include/json/writer.h:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/__algorithm/sort_heap.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/sys/_pthread/_pthread_t.h:
@@ -952,6 +952,8 @@ CMakeFiles/nuts_client.dir/src/nuts_client.cpp.o: /Users/lyn/codes/Cpp/clion/NUT
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/sys/types.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/__algorithm/unique_copy.h:
+
+/Users/lyn/codes/Cpp/clion/NUTS/libs/jsoncpp/include/json/forwards.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/limits.h:
 
@@ -1102,8 +1104,6 @@ CMakeFiles/nuts_client.dir/src/nuts_client.cpp.o: /Users/lyn/codes/Cpp/clion/NUT
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/arm/endian.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/sys/_types/_errno_t.h:
-
-/usr/local/xyq/jsoncpp/include/json/json.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/__bits:
 

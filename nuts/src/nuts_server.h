@@ -14,7 +14,7 @@
 #include<netinet/in.h>
 #include<unistd.h>
 #include "nuts_datagram.h"
-#include "jsoncpp/include/json/json.h"
+#include "json/json.h"
 #include <queue>
 #include <unordered_map>
 #include "basic.h"

@@ -10,7 +10,7 @@
 #include <iostream>
 #include<iomanip>
 #include <arpa/inet.h>
-# include <jsoncpp/include/json/json.h>
+# include <json/json.h>
 #include <unordered_map>
 
 #define NUTS_TYPE_REQUEST 0

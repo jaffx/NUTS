@@ -4,7 +4,7 @@
 # compile CXX with /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/Users/lyn/codes/Cpp/clion/NUTS/libs -I/Users/lyn/codes/Cpp/clion/NUTS/nuts/src
+CXX_INCLUDES = -I/usr/local/include -I/Users/lyn/codes/Cpp/clion/NUTS/nuts/src
 
 CXX_FLAGSarm64 =  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk -mmacosx-version-min=12.5 -std=gnu++17
 
