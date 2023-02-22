@@ -219,6 +219,15 @@ nuts_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 nuts_SOURCE_DIR:STATIC=/Users/lyn/codes/Cpp/clion/NUTS/nuts
 
+//Dependencies for the target
+nuts_client_LIB_DEPENDS:STATIC=general;nuts_datagram;general;jsoncpp;general;basic;
+
+//Dependencies for the target
+nuts_datagram_LIB_DEPENDS:STATIC=general;jsoncpp;general;basic;
+
+//Dependencies for the target
+nuts_server_LIB_DEPENDS:STATIC=general;nuts_datagram;general;jsoncpp;general;basic;
+
 
 ########################
 # INTERNAL cache entries

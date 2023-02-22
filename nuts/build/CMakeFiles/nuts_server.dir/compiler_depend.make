@@ -439,15 +439,15 @@ CMakeFiles/nuts_server.dir/src/nuts_server.cpp.o: /Users/lyn/codes/Cpp/clion/NUT
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/gethostuuid.h \
   /Users/lyn/codes/Cpp/clion/NUTS/nuts/src/nuts_datagram.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/iomanip \
-  /Users/lyn/codes/Cpp/clion/NUTS/libs/jsoncpp/include/json/json.h \
-  /Users/lyn/codes/Cpp/clion/NUTS/libs/jsoncpp/include/json/config.h \
+  /usr/local/include/json/json.h \
+  /usr/local/include/json/config.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/sstream \
-  /Users/lyn/codes/Cpp/clion/NUTS/libs/jsoncpp/include/json/allocator.h \
-  /Users/lyn/codes/Cpp/clion/NUTS/libs/jsoncpp/include/json/version.h \
-  /Users/lyn/codes/Cpp/clion/NUTS/libs/jsoncpp/include/json/json_features.h \
-  /Users/lyn/codes/Cpp/clion/NUTS/libs/jsoncpp/include/json/forwards.h \
-  /Users/lyn/codes/Cpp/clion/NUTS/libs/jsoncpp/include/json/reader.h \
-  /Users/lyn/codes/Cpp/clion/NUTS/libs/jsoncpp/include/json/value.h \
+  /usr/local/include/json/allocator.h \
+  /usr/local/include/json/version.h \
+  /usr/local/include/json/json_features.h \
+  /usr/local/include/json/forwards.h \
+  /usr/local/include/json/reader.h \
+  /usr/local/include/json/value.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/array \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/map \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/__functional/is_transparent.h \
@@ -458,7 +458,7 @@ CMakeFiles/nuts_server.dir/src/nuts_server.cpp.o: /Users/lyn/codes/Cpp/clion/NUT
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/__split_buffer \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/deque \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/stack \
-  /Users/lyn/codes/Cpp/clion/NUTS/libs/jsoncpp/include/json/writer.h \
+  /usr/local/include/json/writer.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/unordered_map \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/__hash_table \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/cmath \
@@ -476,8 +476,6 @@ CMakeFiles/nuts_server.dir/src/nuts_server.cpp.o: /Users/lyn/codes/Cpp/clion/NUT
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/unordered_map:
 
-/Users/lyn/codes/Cpp/clion/NUTS/libs/jsoncpp/include/json/writer.h:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/stack:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/deque:
@@ -492,17 +490,21 @@ CMakeFiles/nuts_server.dir/src/nuts_server.cpp.o: /Users/lyn/codes/Cpp/clion/NUT
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/map:
 
-/Users/lyn/codes/Cpp/clion/NUTS/libs/jsoncpp/include/json/value.h:
+/usr/local/include/json/value.h:
 
-/Users/lyn/codes/Cpp/clion/NUTS/libs/jsoncpp/include/json/json_features.h:
+/usr/local/include/json/reader.h:
 
-/Users/lyn/codes/Cpp/clion/NUTS/libs/jsoncpp/include/json/version.h:
+/usr/local/include/json/forwards.h:
 
-/Users/lyn/codes/Cpp/clion/NUTS/libs/jsoncpp/include/json/allocator.h:
+/usr/local/include/json/json_features.h:
 
-/Users/lyn/codes/Cpp/clion/NUTS/libs/jsoncpp/include/json/config.h:
+/usr/local/include/json/version.h:
 
-/Users/lyn/codes/Cpp/clion/NUTS/libs/jsoncpp/include/json/json.h:
+/usr/local/include/json/allocator.h:
+
+/usr/local/include/json/config.h:
+
+/usr/local/include/json/json.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/__split_buffer:
 
@@ -726,6 +728,8 @@ CMakeFiles/nuts_server.dir/src/nuts_server.cpp.o: /Users/lyn/codes/Cpp/clion/NUT
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/_xlocale.h:
 
+/usr/local/include/json/writer.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/__algorithm/mismatch.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/sys/_pthread/_pthread_mutex_t.h:
@@ -809,8 +813,6 @@ CMakeFiles/nuts_server.dir/src/nuts_server.cpp.o: /Users/lyn/codes/Cpp/clion/NUT
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/_ctype.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/__algorithm/replace_copy.h:
-
-/Users/lyn/codes/Cpp/clion/NUTS/libs/jsoncpp/include/json/reader.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/__iterator/istream_iterator.h:
 
@@ -1323,8 +1325,6 @@ CMakeFiles/nuts_server.dir/src/nuts_server.cpp.o: /Users/lyn/codes/Cpp/clion/NUT
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/__config:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/c++/v1/__algorithm/unique_copy.h:
-
-/Users/lyn/codes/Cpp/clion/NUTS/libs/jsoncpp/include/json/forwards.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/usr/include/limits.h:
 

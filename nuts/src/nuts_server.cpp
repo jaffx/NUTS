@@ -5,7 +5,7 @@
 #include "nuts_server.h"
 
 nuts_server::nuts_server() {
-    this->ip = "127.0.0.1";
+    this->ip = "0.0.0.0";
     this->port = NUTS_DEFAULT_SERVER_PORT;
     auto bind_ret = this->__socket.bind(this->ip, this->port);
     if (not this->__socket.enable()) {

@@ -3,6 +3,7 @@
 #include <arpa/inet.h>
 #include <cstdlib>
 #include <unistd.h>
+#include <json/json.h>
 #include <cstring>
 #include "nuts_datagram.h"
 #include "nuts_client.h"
