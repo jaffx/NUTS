@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include "nuts_datagram.h"
+#include "basic.h"
 #include <sys/socket.h>
 #include <arpa/inet.h>
 #include <netinet/in.h>
@@ -19,7 +20,7 @@ using std::shared_ptr;
 using std::queue, std::vector, std::unordered_map;
 
 class nuts_client {
-    int __socket;
+    udp_socket __sock;
     uint16_t port;
 
 public:

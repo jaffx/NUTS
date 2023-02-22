@@ -38,7 +38,7 @@ typedef Json::Value nuts_json_data;
 
 typedef nuts_returns (*nuts_function)(nuts_paramters &);
 
-typedef unordered_map<string, nuts_function> nuts_map;
+typedef unordered_map<string, nuts_function> nuts_fmap;
 
 class nuts_datagram {
     uint16_t flags;

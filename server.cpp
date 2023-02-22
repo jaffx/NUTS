@@ -8,11 +8,13 @@
 #include <nuts_datagram.h>
 #include "nuts_datagram.h"
 #include "nuts_server.h"
+
 #define SRV_IP "127.0.0.1"
 #define SRV_PORT 1120
 using std::cout, std::endl;
 
 nuts_returns nuts_test_function(nuts_paramters &p) {
+//    std::this_thread::sleep_for(std::chrono::seconds(10));
     if (p["test"].isNull()) {
         cout << "No" << endl;
         return "no";
@@ -24,6 +26,6 @@ nuts_returns nuts_test_function(nuts_paramters &p) {
 
 int main() {
     nuts_server svr;
-    svr.fmaps["test"] = nuts_test_function;
+    svr.fmaps.add_function("test", nuts_test_function);
     svr._run_();
 }

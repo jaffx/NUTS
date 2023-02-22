@@ -10,11 +10,12 @@ nuts_returns nuts_call(string fname, nuts_paramters &p) {
     req.set_func_name(fname);
     req.set_parameters(p);
     auto rsp = send_nuts_call(req);
-    if (rsp)
+
+    if (rsp) {
         rsp->show_info();
-    else
-        cout << "NULL" << endl;
-    return false;
+        return rsp->get_parameters();
+    } else
+        return false;
 }
 
 shared_ptr<nuts_datagram> send_nuts_call(nuts_datagram &data) {

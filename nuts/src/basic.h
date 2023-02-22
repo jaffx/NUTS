@@ -16,6 +16,7 @@ using std::cout, std::endl;
 class udp_socket {
 public:
     int __socket;
+    bool __enable;
     sockaddr_in addr, clnt_addr;
     socklen_t sock_len;
 
@@ -29,11 +30,14 @@ public:
     int bind(string ip, uint16_t port );
 
     int recvfrom(void *, size_t);
+    int recvfrom(void *, size_t, sockaddr_in&);
 
     int sendto(void *, size_t );
+    int sendto(void *, size_t , sockaddr_in&);
 
     void set_timeout(int  secs, int  usecs) const ;
 
+    bool enable();
 };
 
 #endif //TRY_NUT_BASIC_H

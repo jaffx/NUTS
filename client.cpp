@@ -14,5 +14,8 @@ using namespace std;
 int main() {
     Json::Value v;
     auto ret = nuts_call("test", v);
-    cout<<ret.toStyledString()<<endl;
+    if(ret)
+        cout<<ret.toStyledString()<<endl;
+    else
+        cout<<"NULL"<<endl;
 }

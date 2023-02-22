@@ -136,8 +136,8 @@ CMakeFiles/nuts_datagram.dir/clean:
 # Target rules for target CMakeFiles/nuts_server.dir
 
 # All Build rule for target.
-CMakeFiles/nuts_server.dir/all: CMakeFiles/nuts_datagram.dir/all
 CMakeFiles/nuts_server.dir/all: CMakeFiles/basic.dir/all
+CMakeFiles/nuts_server.dir/all: CMakeFiles/nuts_datagram.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts_server.dir/build.make CMakeFiles/nuts_server.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts_server.dir/build.make CMakeFiles/nuts_server.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/lyn/codes/Cpp/clion/NUTS/nuts/build/CMakeFiles --progress-num=7,8 "Built target nuts_server"
@@ -163,8 +163,8 @@ CMakeFiles/nuts_server.dir/clean:
 # Target rules for target CMakeFiles/nuts_client.dir
 
 # All Build rule for target.
-CMakeFiles/nuts_client.dir/all: CMakeFiles/nuts_datagram.dir/all
 CMakeFiles/nuts_client.dir/all: CMakeFiles/basic.dir/all
+CMakeFiles/nuts_client.dir/all: CMakeFiles/nuts_datagram.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts_client.dir/build.make CMakeFiles/nuts_client.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts_client.dir/build.make CMakeFiles/nuts_client.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/lyn/codes/Cpp/clion/NUTS/nuts/build/CMakeFiles --progress-num=3,4 "Built target nuts_client"
