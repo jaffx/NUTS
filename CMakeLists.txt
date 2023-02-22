@@ -8,8 +8,8 @@ set(LIB_LIST jsoncpp nuts_datagram nuts_server nuts_client)
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR})
 
 # 引入jsoncpp
-include_directories(/usr/local/xyq)
-link_directories(/usr/local/xyq/jsoncpp/lib)
+include_directories(libs/)
+link_directories(libs/jsoncpp/lib)
 
 include_directories(nuts/src)
 link_directories(nuts/lib)

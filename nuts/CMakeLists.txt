@@ -7,8 +7,8 @@ set(INSTALL_LIST src/nuts_server.h src/nuts_datagram.h src/nuts_client.h )
 
 install(FILES ${INSTALL_LIST} DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
-include_directories(/usr/local/xyq)
-link_directories(/usr/local/xyq/jsoncpp/lib)
+include_directories(../libs/)
+link_directories(../libs/jsoncpp/lib)
 
 add_library(basic src/basic.cpp)
 add_library(nuts_datagram SHARED src/nuts_datagram.cpp)
