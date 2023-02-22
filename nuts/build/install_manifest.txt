@@ -1,2 +1,3 @@
 /Users/lyn/codes/Cpp/clion/NUTS/nuts/include/nuts_server.h
 /Users/lyn/codes/Cpp/clion/NUTS/nuts/include/nuts_datagram.h
+/Users/lyn/codes/Cpp/clion/NUTS/nuts/include/nuts_client.h

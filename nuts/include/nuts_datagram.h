@@ -9,6 +9,7 @@
 #include <cstring>
 #include <iostream>
 #include<iomanip>
+#include <arpa/inet.h>
 # include <jsoncpp/include/json/json.h>
 #include <unordered_map>
 
@@ -38,7 +39,6 @@ typedef Json::Value nuts_json_data;
 typedef nuts_returns (*nuts_function)(nuts_paramters &);
 
 typedef unordered_map<string, nuts_function> nuts_map;
-
 
 class nuts_datagram {
     uint16_t flags;
@@ -128,6 +128,13 @@ public:
     void error(string v = "") noexcept;
 
 };
+struct nuts_request {
+    nuts_datagram data;
+    sockaddr_in addr;
+};
+
+typedef nuts_request nuts_response;
+
 
 
 string nuts_type_2_text(uint16_t);

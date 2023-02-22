@@ -17,8 +17,8 @@
 #include "jsoncpp/include/json/json.h"
 #include <queue>
 #include <unordered_map>
-
-#define NUTS_DEFAULT_PORT 1998
+#include "basic.h"
+#define NUTS_DEFAULT_SERVER_PORT 1998
 
 using std::string;
 using std::cout, std::endl;
@@ -26,16 +26,10 @@ using std::queue, std::unordered_map;
 
 
 
-struct nuts_request {
-    nuts_datagram data;
-    sockaddr_in addr;
-};
-
-typedef nuts_request nuts_response;
 
 class nuts_server {
 public:
-    int __socket;
+    int  __socket;
     string ip;
     uint16_t port;
     queue<nuts_request *> req_que, req_que_fast;

@@ -26,13 +26,6 @@ using std::queue, std::unordered_map;
 
 
 
-struct nuts_request {
-    nuts_datagram data;
-    sockaddr_in addr;
-};
-
-typedef nuts_request nuts_response;
-
 class nuts_server {
 public:
     int __socket;

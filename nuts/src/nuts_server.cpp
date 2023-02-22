@@ -6,7 +6,7 @@
 
 nuts_server::nuts_server() {
     this->ip = "127.0.0.1";
-    this->port = NUTS_DEFAULT_PORT;
+    this->port = NUTS_DEFAULT_SERVER_PORT;
     this->__socket = socket(AF_INET, SOCK_DGRAM, 0);
     if (this->__socket == -1) {
         cout << "Socket 初始化失败！！" << endl;

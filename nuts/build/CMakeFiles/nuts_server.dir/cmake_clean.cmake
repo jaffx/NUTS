@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "/Users/lyn/codes/Cpp/clion/NUTS/nuts/lib/libnuts_server.a"
+  "/Users/lyn/codes/Cpp/clion/NUTS/nuts/lib/libnuts_server.dylib"
   "/Users/lyn/codes/Cpp/clion/NUTS/nuts/lib/libnuts_server.pdb"
   "CMakeFiles/nuts_server.dir/src/nuts_server.cpp.o"
   "CMakeFiles/nuts_server.dir/src/nuts_server.cpp.o.d"

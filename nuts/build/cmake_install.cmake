@@ -39,7 +39,7 @@ endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/Users/lyn/codes/Cpp/clion/NUTS/nuts/include/nuts_server.h;/Users/lyn/codes/Cpp/clion/NUTS/nuts/include/nuts_datagram.h")
+   "/Users/lyn/codes/Cpp/clion/NUTS/nuts/include/nuts_server.h;/Users/lyn/codes/Cpp/clion/NUTS/nuts/include/nuts_datagram.h;/Users/lyn/codes/Cpp/clion/NUTS/nuts/include/nuts_client.h")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
@@ -49,6 +49,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
   file(INSTALL DESTINATION "/Users/lyn/codes/Cpp/clion/NUTS/nuts/include" TYPE FILE FILES
     "/Users/lyn/codes/Cpp/clion/NUTS/nuts/src/nuts_server.h"
     "/Users/lyn/codes/Cpp/clion/NUTS/nuts/src/nuts_datagram.h"
+    "/Users/lyn/codes/Cpp/clion/NUTS/nuts/src/nuts_client.h"
     )
 endif()
 

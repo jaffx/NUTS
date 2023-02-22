@@ -1,0 +1,2 @@
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc /Users/lyn/codes/Cpp/clion/NUTS/nuts/lib/libbasic.a CMakeFiles/basic.dir/src/basic.cpp.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib /Users/lyn/codes/Cpp/clion/NUTS/nuts/lib/libbasic.a

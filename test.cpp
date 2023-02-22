@@ -5,22 +5,16 @@
 using namespace std;
 
 int main() {
-    uint16_t t;
-    t = 1024 & 0x0c00>>2;
-    cout << t<< endl;
-//    nuts_datagram nd;
-//    nd.initialize_request();
-//
-//    nd.show_info();
-//    char buffer[3000];
-//    int sz = nd.to_buffer(buffer, sizeof(buffer));
-//
-////    for(int i =0;i<sz;i++){
-////        cout<<int(buffer[i])<<'\t'<<buffer[i]<<endl;
-////    }
-//    nd.set_format(1);
-//    cout << nd.get_format() << endl;
-//    sz = nd.parse_from_buffer(buffer, sizeof(buffer));
-//    nd.show_info();
-
+    int sk = socket(AF_INET, SOCK_DGRAM, 0);
+    timeval tv{3, 0};
+    setsockopt(sk, SOL_SOCKET, SO_RCVTIMEO, &tv, sizeof(tv));
+    char buffer[100];
+    sockaddr_in addr;
+    addr.sin_family = AF_INET;
+    addr.sin_port = htons(1120);
+    addr.sin_addr.s_addr = inet_addr("127.0.0.1");
+    socklen_t len = sizeof(addr);
+    int v = recvfrom(sk, buffer, sizeof(buffer), 0, (sockaddr *) &addr, &len);
+    cout << "ok" << endl;
+    cout << v << endl;
 }

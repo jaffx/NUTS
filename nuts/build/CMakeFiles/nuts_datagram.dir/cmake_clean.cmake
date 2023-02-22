@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "/Users/lyn/codes/Cpp/clion/NUTS/nuts/lib/libnuts_datagram.a"
+  "/Users/lyn/codes/Cpp/clion/NUTS/nuts/lib/libnuts_datagram.dylib"
   "/Users/lyn/codes/Cpp/clion/NUTS/nuts/lib/libnuts_datagram.pdb"
   "CMakeFiles/nuts_datagram.dir/src/nuts_datagram.cpp.o"
   "CMakeFiles/nuts_datagram.dir/src/nuts_datagram.cpp.o.d"
