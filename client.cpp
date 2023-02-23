@@ -14,7 +14,7 @@ using namespace std;
 
 int main() {
     Json::Value v;
-    auto ret = nuts_call("test", v);
+    auto ret = nuts_call("test", v, "123.60.150.117");
     if(ret)
         cout<<ret.toStyledString()<<endl;
     else
