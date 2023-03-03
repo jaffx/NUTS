@@ -162,63 +162,38 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named basic
+# Target rules for targets named nuts_static
 
 # Build rule for target.
-basic: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 basic
-.PHONY : basic
+nuts_static: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 nuts_static
+.PHONY : nuts_static
 
 # fast build rule for target.
-basic/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/basic.dir/build.make CMakeFiles/basic.dir/build
-.PHONY : basic/fast
+nuts_static/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts_static.dir/build.make CMakeFiles/nuts_static.dir/build
+.PHONY : nuts_static/fast
 
 #=============================================================================
-# Target rules for targets named nuts_datagram
+# Target rules for targets named nuts
 
 # Build rule for target.
-nuts_datagram: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 nuts_datagram
-.PHONY : nuts_datagram
+nuts: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 nuts
+.PHONY : nuts
 
 # fast build rule for target.
-nuts_datagram/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts_datagram.dir/build.make CMakeFiles/nuts_datagram.dir/build
-.PHONY : nuts_datagram/fast
-
-#=============================================================================
-# Target rules for targets named nuts_server
-
-# Build rule for target.
-nuts_server: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 nuts_server
-.PHONY : nuts_server
-
-# fast build rule for target.
-nuts_server/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts_server.dir/build.make CMakeFiles/nuts_server.dir/build
-.PHONY : nuts_server/fast
-
-#=============================================================================
-# Target rules for targets named nuts_client
-
-# Build rule for target.
-nuts_client: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 nuts_client
-.PHONY : nuts_client
-
-# fast build rule for target.
-nuts_client/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts_client.dir/build.make CMakeFiles/nuts_client.dir/build
-.PHONY : nuts_client/fast
+nuts/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts.dir/build.make CMakeFiles/nuts.dir/build
+.PHONY : nuts/fast
 
 src/basic.o: src/basic.cpp.o
 .PHONY : src/basic.o
 
 # target to build an object file
 src/basic.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/basic.dir/build.make CMakeFiles/basic.dir/src/basic.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts_static.dir/build.make CMakeFiles/nuts_static.dir/src/basic.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts.dir/build.make CMakeFiles/nuts.dir/src/basic.cpp.o
 .PHONY : src/basic.cpp.o
 
 src/basic.i: src/basic.cpp.i
@@ -226,7 +201,8 @@ src/basic.i: src/basic.cpp.i
 
 # target to preprocess a source file
 src/basic.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/basic.dir/build.make CMakeFiles/basic.dir/src/basic.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts_static.dir/build.make CMakeFiles/nuts_static.dir/src/basic.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts.dir/build.make CMakeFiles/nuts.dir/src/basic.cpp.i
 .PHONY : src/basic.cpp.i
 
 src/basic.s: src/basic.cpp.s
@@ -234,15 +210,44 @@ src/basic.s: src/basic.cpp.s
 
 # target to generate assembly for a file
 src/basic.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/basic.dir/build.make CMakeFiles/basic.dir/src/basic.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts_static.dir/build.make CMakeFiles/nuts_static.dir/src/basic.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts.dir/build.make CMakeFiles/nuts.dir/src/basic.cpp.s
 .PHONY : src/basic.cpp.s
+
+src/nuts_center.o: src/nuts_center.cpp.o
+.PHONY : src/nuts_center.o
+
+# target to build an object file
+src/nuts_center.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts_static.dir/build.make CMakeFiles/nuts_static.dir/src/nuts_center.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts.dir/build.make CMakeFiles/nuts.dir/src/nuts_center.cpp.o
+.PHONY : src/nuts_center.cpp.o
+
+src/nuts_center.i: src/nuts_center.cpp.i
+.PHONY : src/nuts_center.i
+
+# target to preprocess a source file
+src/nuts_center.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts_static.dir/build.make CMakeFiles/nuts_static.dir/src/nuts_center.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts.dir/build.make CMakeFiles/nuts.dir/src/nuts_center.cpp.i
+.PHONY : src/nuts_center.cpp.i
+
+src/nuts_center.s: src/nuts_center.cpp.s
+.PHONY : src/nuts_center.s
+
+# target to generate assembly for a file
+src/nuts_center.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts_static.dir/build.make CMakeFiles/nuts_static.dir/src/nuts_center.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts.dir/build.make CMakeFiles/nuts.dir/src/nuts_center.cpp.s
+.PHONY : src/nuts_center.cpp.s
 
 src/nuts_client.o: src/nuts_client.cpp.o
 .PHONY : src/nuts_client.o
 
 # target to build an object file
 src/nuts_client.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts_client.dir/build.make CMakeFiles/nuts_client.dir/src/nuts_client.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts_static.dir/build.make CMakeFiles/nuts_static.dir/src/nuts_client.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts.dir/build.make CMakeFiles/nuts.dir/src/nuts_client.cpp.o
 .PHONY : src/nuts_client.cpp.o
 
 src/nuts_client.i: src/nuts_client.cpp.i
@@ -250,7 +255,8 @@ src/nuts_client.i: src/nuts_client.cpp.i
 
 # target to preprocess a source file
 src/nuts_client.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts_client.dir/build.make CMakeFiles/nuts_client.dir/src/nuts_client.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts_static.dir/build.make CMakeFiles/nuts_static.dir/src/nuts_client.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts.dir/build.make CMakeFiles/nuts.dir/src/nuts_client.cpp.i
 .PHONY : src/nuts_client.cpp.i
 
 src/nuts_client.s: src/nuts_client.cpp.s
@@ -258,7 +264,8 @@ src/nuts_client.s: src/nuts_client.cpp.s
 
 # target to generate assembly for a file
 src/nuts_client.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts_client.dir/build.make CMakeFiles/nuts_client.dir/src/nuts_client.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts_static.dir/build.make CMakeFiles/nuts_static.dir/src/nuts_client.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts.dir/build.make CMakeFiles/nuts.dir/src/nuts_client.cpp.s
 .PHONY : src/nuts_client.cpp.s
 
 src/nuts_datagram.o: src/nuts_datagram.cpp.o
@@ -266,7 +273,8 @@ src/nuts_datagram.o: src/nuts_datagram.cpp.o
 
 # target to build an object file
 src/nuts_datagram.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts_datagram.dir/build.make CMakeFiles/nuts_datagram.dir/src/nuts_datagram.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts_static.dir/build.make CMakeFiles/nuts_static.dir/src/nuts_datagram.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts.dir/build.make CMakeFiles/nuts.dir/src/nuts_datagram.cpp.o
 .PHONY : src/nuts_datagram.cpp.o
 
 src/nuts_datagram.i: src/nuts_datagram.cpp.i
@@ -274,7 +282,8 @@ src/nuts_datagram.i: src/nuts_datagram.cpp.i
 
 # target to preprocess a source file
 src/nuts_datagram.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts_datagram.dir/build.make CMakeFiles/nuts_datagram.dir/src/nuts_datagram.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts_static.dir/build.make CMakeFiles/nuts_static.dir/src/nuts_datagram.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts.dir/build.make CMakeFiles/nuts.dir/src/nuts_datagram.cpp.i
 .PHONY : src/nuts_datagram.cpp.i
 
 src/nuts_datagram.s: src/nuts_datagram.cpp.s
@@ -282,7 +291,8 @@ src/nuts_datagram.s: src/nuts_datagram.cpp.s
 
 # target to generate assembly for a file
 src/nuts_datagram.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts_datagram.dir/build.make CMakeFiles/nuts_datagram.dir/src/nuts_datagram.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts_static.dir/build.make CMakeFiles/nuts_static.dir/src/nuts_datagram.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts.dir/build.make CMakeFiles/nuts.dir/src/nuts_datagram.cpp.s
 .PHONY : src/nuts_datagram.cpp.s
 
 src/nuts_server.o: src/nuts_server.cpp.o
@@ -290,7 +300,8 @@ src/nuts_server.o: src/nuts_server.cpp.o
 
 # target to build an object file
 src/nuts_server.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts_server.dir/build.make CMakeFiles/nuts_server.dir/src/nuts_server.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts_static.dir/build.make CMakeFiles/nuts_static.dir/src/nuts_server.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts.dir/build.make CMakeFiles/nuts.dir/src/nuts_server.cpp.o
 .PHONY : src/nuts_server.cpp.o
 
 src/nuts_server.i: src/nuts_server.cpp.i
@@ -298,7 +309,8 @@ src/nuts_server.i: src/nuts_server.cpp.i
 
 # target to preprocess a source file
 src/nuts_server.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts_server.dir/build.make CMakeFiles/nuts_server.dir/src/nuts_server.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts_static.dir/build.make CMakeFiles/nuts_static.dir/src/nuts_server.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts.dir/build.make CMakeFiles/nuts.dir/src/nuts_server.cpp.i
 .PHONY : src/nuts_server.cpp.i
 
 src/nuts_server.s: src/nuts_server.cpp.s
@@ -306,8 +318,36 @@ src/nuts_server.s: src/nuts_server.cpp.s
 
 # target to generate assembly for a file
 src/nuts_server.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts_server.dir/build.make CMakeFiles/nuts_server.dir/src/nuts_server.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts_static.dir/build.make CMakeFiles/nuts_static.dir/src/nuts_server.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts.dir/build.make CMakeFiles/nuts.dir/src/nuts_server.cpp.s
 .PHONY : src/nuts_server.cpp.s
+
+src/order_tree.o: src/order_tree.cpp.o
+.PHONY : src/order_tree.o
+
+# target to build an object file
+src/order_tree.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts_static.dir/build.make CMakeFiles/nuts_static.dir/src/order_tree.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts.dir/build.make CMakeFiles/nuts.dir/src/order_tree.cpp.o
+.PHONY : src/order_tree.cpp.o
+
+src/order_tree.i: src/order_tree.cpp.i
+.PHONY : src/order_tree.i
+
+# target to preprocess a source file
+src/order_tree.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts_static.dir/build.make CMakeFiles/nuts_static.dir/src/order_tree.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts.dir/build.make CMakeFiles/nuts.dir/src/order_tree.cpp.i
+.PHONY : src/order_tree.cpp.i
+
+src/order_tree.s: src/order_tree.cpp.s
+.PHONY : src/order_tree.s
+
+# target to generate assembly for a file
+src/order_tree.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts_static.dir/build.make CMakeFiles/nuts_static.dir/src/order_tree.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nuts.dir/build.make CMakeFiles/nuts.dir/src/order_tree.cpp.s
+.PHONY : src/order_tree.cpp.s
 
 # Help Target
 help:
@@ -321,13 +361,14 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... basic"
-	@echo "... nuts_client"
-	@echo "... nuts_datagram"
-	@echo "... nuts_server"
+	@echo "... nuts"
+	@echo "... nuts_static"
 	@echo "... src/basic.o"
 	@echo "... src/basic.i"
 	@echo "... src/basic.s"
+	@echo "... src/nuts_center.o"
+	@echo "... src/nuts_center.i"
+	@echo "... src/nuts_center.s"
 	@echo "... src/nuts_client.o"
 	@echo "... src/nuts_client.i"
 	@echo "... src/nuts_client.s"
@@ -337,6 +378,9 @@ help:
 	@echo "... src/nuts_server.o"
 	@echo "... src/nuts_server.i"
 	@echo "... src/nuts_server.s"
+	@echo "... src/order_tree.o"
+	@echo "... src/order_tree.i"
+	@echo "... src/order_tree.s"
 .PHONY : help
 
 

@@ -37,7 +37,7 @@ public:
 
 };
 
-nuts_returns nuts_call(string fname, nuts_paramters &p);
+nuts_returns nuts_call(string fname, nuts_paramters &p); // 调这个函数就行
 
 shared_ptr<nuts_datagram> send_nuts_call(nuts_datagram &);
 

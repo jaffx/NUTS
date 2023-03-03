@@ -24,6 +24,7 @@ nuts_datagram::nuts_datagram() {
 }
 
 int nuts_datagram::parse_from_buffer(char *buffer, size_t buf_size) {
+    // 成功返回长度，失败返回0
     if (buf_size < 12) {
         return 0;
     }
@@ -204,7 +205,7 @@ void nuts_datagram::set_type(uint16_t type) noexcept {
 }
 
 uint16_t nuts_datagram::get_type() const noexcept {
-    return (this->flags & 0xf000)>> 12;
+    return (this->flags & 0xf000) >> 12;
 }
 
 void nuts_datagram::set_format(uint16_t f) noexcept {
@@ -217,7 +218,7 @@ void nuts_datagram::set_format(uint16_t f) noexcept {
 
 uint16_t nuts_datagram::get_format() const noexcept {
 //    cout<<"flag!" << flags << endl;
-    return (this->flags & 0x0c00)>>10;
+    return (this->flags & 0x0c00) >> 10;
 }
 
 
@@ -309,9 +310,11 @@ string nuts_type_2_text(uint16_t type) {
         case NUTS_TYPE_RESPONSE:
             ret = "Nuts Response";
             break;
-        case NUTS_TYPE_LOG:
-            ret = "LOG";
+        case NUTS_TYPE_SERVER_REPORT:
+            ret = "Server Report";
             break;
+        case NUTS_TYPE_SERVER_REPORT_RESPONSE:
+            ret = "Server Report Response";
     }
     return ret;
 

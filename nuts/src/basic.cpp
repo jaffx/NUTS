@@ -7,9 +7,9 @@
 udp_socket::udp_socket() {
     this->__socket = socket(AF_INET, SOCK_DGRAM, 0);
     this->addr = {};
+    this->addr.sin_family = AF_INET;
     this->sock_len = sizeof(addr);
     this->__enable = this->__socket != -1;
-    this->sock_len = sizeof(sockaddr);
 }
 
 udp_socket::udp_socket(string ip, uint16_t port) {
@@ -21,6 +21,10 @@ udp_socket::udp_socket(string ip, uint16_t port) {
     this->addr.sin_family = AF_INET;
     this->__enable = this->__socket != -1;
     this->sock_len = sizeof(sockaddr);
+}
+
+int udp_socket::listen() {
+    return ::listen(this->__socket, 10);
 }
 
 udp_socket::~udp_socket() {
@@ -68,4 +72,32 @@ int udp_socket::bind(string ip, uint16_t port) {
 
 bool udp_socket::enable() {
     return __enable;
+}
+
+string get_local_ip_using_create_socket() {
+    static string local_ip = "";
+    if (not local_ip.empty())
+        return local_ip;
+    int status = 0;
+    int af = AF_INET;
+    int sock_fd = socket(AF_INET, SOCK_DGRAM, 0);
+    struct sockaddr_in remote_addr;
+    struct sockaddr_in local_addr;
+    socklen_t len = 0;
+
+    remote_addr.sin_family = AF_INET;
+    remote_addr.sin_port = htons(53);
+    remote_addr.sin_addr.s_addr = inet_addr("1.1.1.1");
+
+    len = sizeof(struct sockaddr_in);
+    status = connect(sock_fd, (struct sockaddr *) &remote_addr, len);
+    if (status != 0) {
+        printf("connect err \n");
+    }
+
+    len = sizeof(struct sockaddr_in);
+    getsockname(sock_fd, (struct sockaddr *) &local_addr, &len);
+
+    local_ip = inet_ntoa(local_addr.sin_addr);
+    return local_ip;
 }

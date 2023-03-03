@@ -1,7 +1,5 @@
-/Users/lyn/codes/Cpp/clion/NUTS/nuts/build/CMakeFiles/basic.dir
-/Users/lyn/codes/Cpp/clion/NUTS/nuts/build/CMakeFiles/nuts_datagram.dir
-/Users/lyn/codes/Cpp/clion/NUTS/nuts/build/CMakeFiles/nuts_server.dir
-/Users/lyn/codes/Cpp/clion/NUTS/nuts/build/CMakeFiles/nuts_client.dir
+/Users/lyn/codes/Cpp/clion/NUTS/nuts/build/CMakeFiles/nuts_static.dir
+/Users/lyn/codes/Cpp/clion/NUTS/nuts/build/CMakeFiles/nuts.dir
 /Users/lyn/codes/Cpp/clion/NUTS/nuts/build/CMakeFiles/edit_cache.dir
 /Users/lyn/codes/Cpp/clion/NUTS/nuts/build/CMakeFiles/rebuild_cache.dir
 /Users/lyn/codes/Cpp/clion/NUTS/nuts/build/CMakeFiles/list_install_components.dir

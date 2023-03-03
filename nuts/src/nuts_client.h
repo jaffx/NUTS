@@ -37,8 +37,8 @@ public:
 
 };
 
-nuts_returns nuts_call(string fname, nuts_paramters &p, string ip="127.0.0.1");
+nuts_returns nuts_call(string fname, nuts_paramters &p); // 调这个函数就行
 
-shared_ptr<nuts_datagram> send_nuts_call(nuts_datagram &, string ip = "127.0.0.1");
+shared_ptr<nuts_datagram> send_nuts_call(nuts_datagram &);
 
 #endif //TRY_NUT_NUTS_CLIENT_H

@@ -216,6 +216,9 @@ nuts_BINARY_DIR:STATIC=/Users/lyn/codes/Cpp/clion/NUTS/nuts/build
 //Value Computed by CMake
 nuts_IS_TOP_LEVEL:STATIC=ON
 
+//Dependencies for the target
+nuts_LIB_DEPENDS:STATIC=general;jsoncpp;
+
 //Value Computed by CMake
 nuts_SOURCE_DIR:STATIC=/Users/lyn/codes/Cpp/clion/NUTS/nuts
 

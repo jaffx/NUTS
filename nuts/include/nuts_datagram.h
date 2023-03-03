@@ -10,13 +10,15 @@
 #include <iostream>
 #include<iomanip>
 #include <arpa/inet.h>
-# include <jsoncpp/include/json/json.h>
+# include <json/json.h>
 #include <unordered_map>
+
+#define NUTS_DATAGRAM_LENGTH_LIMIT 65535
 
 #define NUTS_TYPE_REQUEST 0
 #define NUTS_TYPE_RESPONSE 1
-#define NUTS_TYPE_LOG 2
-#define NUTS_TYPE_UNKNOWN 3
+#define NUTS_TYPE_SERVER_REPORT 2
+#define NUTS_TYPE_SERVER_REPORT_RESPONSE 3
 
 #define NUTS_FORMAT_TEXT 0
 #define NUTS_FORMAT_JSON 1
@@ -130,7 +132,7 @@ public:
 };
 struct nuts_request {
     nuts_datagram data;
-    sockaddr_in addr;
+    sockaddr_in addr = {};
 };
 
 typedef nuts_request nuts_response;

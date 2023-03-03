@@ -39,7 +39,7 @@ endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/Users/lyn/codes/Cpp/clion/NUTS/nuts/include/nuts_server.h;/Users/lyn/codes/Cpp/clion/NUTS/nuts/include/nuts_datagram.h;/Users/lyn/codes/Cpp/clion/NUTS/nuts/include/nuts_client.h")
+   "/Users/lyn/codes/Cpp/clion/NUTS/nuts/include/nuts_server.h;/Users/lyn/codes/Cpp/clion/NUTS/nuts/include/nuts_datagram.h;/Users/lyn/codes/Cpp/clion/NUTS/nuts/include/nuts_client.h;/Users/lyn/codes/Cpp/clion/NUTS/nuts/include/basic.h;/Users/lyn/codes/Cpp/clion/NUTS/nuts/include/order_tree.h;/Users/lyn/codes/Cpp/clion/NUTS/nuts/include/nuts_center.h")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
@@ -50,6 +50,9 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
     "/Users/lyn/codes/Cpp/clion/NUTS/nuts/src/nuts_server.h"
     "/Users/lyn/codes/Cpp/clion/NUTS/nuts/src/nuts_datagram.h"
     "/Users/lyn/codes/Cpp/clion/NUTS/nuts/src/nuts_client.h"
+    "/Users/lyn/codes/Cpp/clion/NUTS/nuts/src/basic.h"
+    "/Users/lyn/codes/Cpp/clion/NUTS/nuts/src/order_tree.h"
+    "/Users/lyn/codes/Cpp/clion/NUTS/nuts/src/nuts_center.h"
     )
 endif()
 

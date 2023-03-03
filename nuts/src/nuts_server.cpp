@@ -4,7 +4,10 @@
 
 #include "nuts_server.h"
 
-nuts_server::nuts_server() {
+nuts_server::nuts_server(string name, string comments) : psm_name(name), psm_comment(comments) {
+    this->tree.tree.root.data.first = name;
+    this->tree.tree.root.data.second.type = "psm";
+    this->tree.tree.root.data.second.comment = comments;
     this->ip = "0.0.0.0";
     this->port = NUTS_DEFAULT_SERVER_PORT;
     auto bind_ret = this->__socket.bind(this->ip, this->port);
@@ -16,12 +19,18 @@ nuts_server::nuts_server() {
     cout << "服务器启动成功：" << ip << ":" << port << endl;
 }
 
+inline void nuts_server::update_comment(std::string comment) noexcept {
+    this->psm_comment = comment;
+}
 
 nuts_server::~nuts_server() {
 
 }
 
 void nuts_server::_run_() {
+    /*
+     *
+     */
     std::thread th(&nuts_server::_recv_, this);
     th.detach();
     std::thread th2(&nuts_server::_send_, this);
@@ -98,7 +107,7 @@ void nuts_server::_do_nuts_() {
         rsp->addr = req->addr;
         // 请求内容处理
         string &fn = req->data.func_name;
-        auto &&nuts_fp = this->fmaps.find_function(fn);
+        auto &&nuts_fp = this->tree.find_function(fn);
         if (nuts_fp) {
             // 找到映射函数
             auto &&param = req->data.get_parameters();
@@ -143,6 +152,14 @@ void nuts_server::_send_() {
     }
 }
 
+string nuts_server::get_server_name() const {
+    return this->server_name;
+}
+
+void nuts_server::set_server_name(std::string name) noexcept {
+    this->server_name = std::move(name);
+}
+
 void nuts_function_maps::add_function(std::string r_name, nuts_function h_name) {
     this->fmaps[r_name] = h_name;
 }
@@ -166,4 +183,153 @@ nuts_function nuts_function_maps::find_function(string r_name) const {
         return this->fmaps.at(r_name);
     else
         return nullptr;
+}
+
+int nuts_server::report_server() {
+    /*
+     * 向服务中台报告自身服务树信息，进行服务注册
+     */
+    // 检查是否设置中台位置
+    if (this->center_ip.empty()) {
+        cout << "中台信息未设置" << endl;
+        return -1;
+    }
+    // 获取注册列表
+    auto &&register_infos = this->tree.get_register_infos();
+    Json::Value j_rinfos;
+    for (auto &kv: register_infos) {
+        j_rinfos[kv.first] = kv.second;
+    }
+//    cout<<j_rinfos.toStyledString()<<endl;
+    // 封装注册报文
+    nuts_datagram report;
+    report.set_type(NUTS_TYPE_SERVER_REPORT);
+    report.set_data1(get_local_ip_using_create_socket());
+    sockaddr_in center_addr = {};
+    center_addr.sin_port = htons(center_port);
+    center_addr.sin_family = AF_INET;
+    center_addr.sin_addr.s_addr = inet_addr(center_ip.data());
+    char outbuffer[NUTS_DATAGRAM_LENGTH_LIMIT] = {};
+
+    report.set_data2(j_rinfos.toStyledString());
+    int buffer_len = report.to_buffer(outbuffer, sizeof(outbuffer));
+    int ret = this->__socket.sendto(outbuffer, buffer_len, center_addr);
+
+    return 1;
+}
+
+vector<pair<string, string>> nuts_function_tree::get_register_infos() const {
+    auto *p = &this->tree.root;
+    vector<pair<string, string>> rets;
+    queue<decltype(p)> nodes;
+    queue<string> values;
+    string v;
+    nodes.push(p), values.push(p->data.first);
+    while (not nodes.empty()) {
+        p = nodes.front(), v = values.front();
+        rets.push_back(std::make_pair(v, p->data.second.type));
+        p = p->child;
+        while (p) {
+            nodes.push(p), values.push(v + "/" + p->data.first);
+            p = p->next_brother;
+        }
+        nodes.pop(), values.pop();
+    }
+    return rets;
+}
+
+vector<string> nuts_function_tree::get_api_list() const {
+    auto *p = &this->tree.root;
+    vector<string> rets;
+    queue<decltype(p)> nodes;
+    queue<string> values;
+    string v;
+    nodes.push(p), values.push(p->data.first);
+    while (not nodes.empty()) {
+        p = nodes.front(), v = values.front();
+        if (p->data.second.type == "api")
+            rets.push_back(v);
+        p = p->child;
+        while (p) {
+            nodes.push(p), values.push(v + "/" + p->data.first);
+            p = p->next_brother;
+        }
+        nodes.pop(), values.pop();
+    }
+    return rets;
+}
+
+void nuts_server::set_center(string ip, uint16_t port) noexcept {
+    this->center_ip = ip;
+    this->center_port = port;
+}
+
+
+int nuts_function_tree::add_path(std::string path, std::string comment) {
+    return this->add_node(path, nullptr, "path", comment);
+}
+
+int nuts_function_tree::add_api(std::string path, nuts_function func_ptr, std::string comment) {
+    return this->add_node(path, func_ptr, "api", comment);
+}
+
+int nuts_function_tree::add_node(std::string path, nuts_function func_ptr, string type, std::string comment) {
+    /*
+     * @return
+     *          0   成功
+     *          -1  子节点已经注册
+     *          -2  父节点没有注册
+     *          -3  父节点注册不是路径，无法生成子节点
+     *
+     */
+    vector<string> pths = path_to_vector(path);
+    // 检查pths第一个节点是否psm名称相同
+    if (pths.empty()) {
+        cout << "节点路径不能为空" << endl;
+        return -4;
+    }
+    if (pths[0] != this->tree.root.data.first) {
+        cout << "任何路径开头必须以psm名称开始" << endl;
+        return -4;
+    }
+    vector<string> r_pths{pths.begin() + 1, pths.end()};
+    auto v = this->tree.find_node(r_pths);
+    if (v)// 该节点被注册
+    {
+        cout << path << "节点被注册" << endl;
+        return -1;
+    }
+    vector<string> father_path{r_pths.begin(), r_pths.end() - 1};
+
+    v = this->tree.find_node(father_path);
+    if (father_path.size() > 1) {
+        if (not v) {
+            cout << vector_to_path(father_path) << "未注册" << endl;
+            return -2;
+        } else if (v->data.second.type != "path") {
+            cout << vector_to_path(father_path) << "节点是非路径节点，无法生成子节点" << endl;
+            return -3;
+        }
+    }
+
+    auto ret = this->tree.insert_node(r_pths, {func_ptr, type, comment});
+    if (ret)
+        return 0;
+    else {
+        cout << path << "节点注册失败，错误类型未知" << endl;
+        return -4;
+    }
+}
+
+int nuts_function_tree::delete_path(std::string path) {
+    return this->tree.delete_node(std::move(path));
+
+}
+
+nuts_function nuts_function_tree::find_function(std::string path) {
+    auto v = this->tree.find_node(path);
+    if (not v)
+        return nullptr;
+    else
+        return v->data.second.func_ptr;
 }

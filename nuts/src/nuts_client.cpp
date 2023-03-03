@@ -4,12 +4,12 @@
 
 #include "nuts_client.h"
 
-nuts_returns nuts_call(string fname, nuts_paramters &p, string ip) {
+nuts_returns nuts_call(string fname, nuts_paramters &p) {
     nuts_datagram req;
     req.initialize_request();
     req.set_func_name(fname);
     req.set_parameters(p);
-    auto rsp = send_nuts_call(req, ip);
+    auto rsp = send_nuts_call(req);
 
     if (rsp) {
         rsp->show_info();
@@ -18,10 +18,10 @@ nuts_returns nuts_call(string fname, nuts_paramters &p, string ip) {
         return false;
 }
 
-shared_ptr<nuts_datagram> send_nuts_call(nuts_datagram &data, string ip) {
+shared_ptr<nuts_datagram> send_nuts_call(nuts_datagram &data) {
     int sockfd = socket(AF_INET, SOCK_DGRAM, 0);
     sockaddr_in addr = {};
-    addr.sin_addr.s_addr = inet_addr(ip.data());
+    addr.sin_addr.s_addr = inet_addr("127.0.0.1");
     addr.sin_port = htons(1998);
     addr.sin_family = AF_INET;
     socklen_t sklen = sizeof(addr);

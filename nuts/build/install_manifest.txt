@@ -1,3 +1,6 @@
 /Users/lyn/codes/Cpp/clion/NUTS/nuts/include/nuts_server.h
 /Users/lyn/codes/Cpp/clion/NUTS/nuts/include/nuts_datagram.h
 /Users/lyn/codes/Cpp/clion/NUTS/nuts/include/nuts_client.h
+/Users/lyn/codes/Cpp/clion/NUTS/nuts/include/basic.h
+/Users/lyn/codes/Cpp/clion/NUTS/nuts/include/order_tree.h
+/Users/lyn/codes/Cpp/clion/NUTS/nuts/include/nuts_center.h

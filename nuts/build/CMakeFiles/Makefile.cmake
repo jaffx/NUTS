@@ -47,8 +47,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/basic.dir/DependInfo.cmake"
-  "CMakeFiles/nuts_datagram.dir/DependInfo.cmake"
-  "CMakeFiles/nuts_server.dir/DependInfo.cmake"
-  "CMakeFiles/nuts_client.dir/DependInfo.cmake"
+  "CMakeFiles/nuts_static.dir/DependInfo.cmake"
+  "CMakeFiles/nuts.dir/DependInfo.cmake"
   )
